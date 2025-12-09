@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use App\Providers\RouteServiceProvider;
+use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class RedirectIfAuthenticated
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @param  string|null  ...$guards
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     */
+    public function handle(Request $request, Closure $next, ...$guards)
+    {
+        $guards = empty($guards) ? [null] : $guards;
+        foreach ($guards as $guard) {
+
+            if ($guard == "member" && Auth::guard($guard)->check()) {
+
+                $userType = intval(auth()->guard('member')->user()->type);
+                switch ($userType) {
+                    case 1: //buyer
+                        return redirect()->route('index');
+                        break;
+                    case 2: //seller
+                        return redirect()->route('index');
+                        break;
+                    case 3: //property dealer
+                        return redirect()->route('dashboard.dashboard');
+                        break;
+                    default:
+                        return redirect()->route('member.login-view');
+                        break;
+                }
+
+            }
+
+            if (Auth::guard($guard)->check()) {
+                return redirect(RouteServiceProvider::HOME);
+            }
+        }
+
+        return $next($request);
+    }
+}
