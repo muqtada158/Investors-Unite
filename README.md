@@ -1,66 +1,203 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Real Estate Investment Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive multi-tenant SaaS platform connecting property sellers with real estate dealers through a subscription-based marketplace. Built as a Progressive Web App (PWA) with Laravel, featuring real-time notifications, geolocation services, and recurring payment management via Stripe.
 
-## About Laravel
+## 🎯 Project Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This platform streamlines real estate transactions by providing a centralized marketplace where property sellers can list their assets and professional dealers can discover investment opportunities. The subscription model ensures sustainable revenue while offering tiered access to premium features.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Key Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Multi-Role Dashboard System
+- **Seller Dashboard:** Property listing management, dealer inquiries, lead tracking, subscription analytics
+- **Dealer Dashboard:** Property search and filtering, saved listings, seller communication, deal pipeline management
+- **Super Admin Dashboard:** User management, subscription oversight, revenue analytics, platform configuration
 
-## Learning Laravel
+### Stripe Subscription Management
+- **Tiered Plans:** Multiple subscription levels with feature differentiation
+- **Recurring Billing:** Automated monthly/annual payment processing via Stripe
+- **Coupon System:** Promotional codes and discount management
+- **Webhook Integration:** Real-time subscription status updates (active, canceled, past_due)
+- **Payment History:** Detailed transaction logs and invoice generation
+- **Trial Periods:** Free trial functionality with automatic conversion
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Progressive Web App (PWA)
+- **Offline Capability:** Service workers for offline data access
+- **App-like Experience:** Install to home screen, full-screen mode
+- **Push Notifications:** Native-style notifications on desktop and mobile
+- **Fast Loading:** Optimized caching strategies for instant page loads
+- **Responsive Design:** Seamless experience across all devices
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Real-Time Features
+- **Push Notifications:** Instant alerts for new listings, inquiries, and subscription events
+- **Live Chat Messaging:** Real-time communication between sellers and dealers
+- **Activity Feeds:** Live updates on property status changes
+- **Notification Center:** Centralized inbox for all platform communications
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Geolocation & Mapping
+- **Google Maps Integration:** Interactive property location mapping
+- **Geolocation API:** Automatic location detection and address autocomplete
+- **Radius Search:** Find properties within specified distance
+- **Location-based Filtering:** Search by city, neighborhood, or coordinates
 
-## Laravel Sponsors
+## 🛠️ Tech Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+**Backend:** Laravel (PHP), MySQL  
+**Payment Processing:** Stripe (Subscriptions, Webhooks, Coupons)  
+**PWA:** Service Workers, Web App Manifest  
+**Real-time:** Pusher, OneSignal Push Notifications  
+**Mapping:** Google Maps API, Geolocation API  
+**Frontend:** Blade Templates, JavaScript, jQuery, Bootstrap  
+**Tools:** Postman (API testing), Git, Laravel Mix
 
-### Premium Partners
+## 📋 Core Functionalities
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### For Property Sellers
+- **Listing Creation:** Upload property details, photos, pricing, and location
+- **Subscription Management:** Choose plans, upgrade/downgrade, payment history
+- **Lead Management:** Track dealer inquiries and communication history
+- **Analytics Dashboard:** View listing performance and engagement metrics
+- **Document Management:** Upload property documents and legal papers
 
-## Contributing
+### For Real Estate Dealers
+- **Advanced Search:** Filter by price, location, property type, size
+- **Saved Searches:** Store search criteria for automatic new listing alerts
+- **Favorites:** Bookmark properties for future reference
+- **Subscription Benefits:** Access premium listings based on subscription tier
+- **Communication Tools:** Direct messaging with sellers
+- **Deal Pipeline:** Track properties from inquiry to closing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### For Administrators
+- **Subscription Analytics:** Revenue tracking, churn analysis, MRR/ARR metrics
+- **User Management:** Approve/suspend users, manage roles and permissions
+- **Content Moderation:** Review and approve property listings
+- **Coupon Management:** Create promotional campaigns and track usage
+- **Platform Configuration:** Set subscription pricing, feature flags, system settings
+- **Stripe Dashboard Integration:** Financial reporting and reconciliation
 
-## Code of Conduct
+## 🔐 Security & Compliance
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **PCI Compliance:** Stripe handles all payment data securely
+- **Role-based Access Control:** Granular permissions system
+- **Data Encryption:** Sensitive information encrypted at rest and in transit
+- **CSRF Protection:** Laravel's built-in security features
+- **Input Validation:** Comprehensive server-side validation
+- **Session Management:** Secure authentication and session handling
 
-## Security Vulnerabilities
+## 💳 Subscription Features
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Payment Flow
+1. User selects subscription plan
+2. Stripe Checkout session created
+3. Payment processed securely via Stripe
+4. Webhook confirms payment and activates subscription
+5. User gains immediate access to plan features
 
-## License
+### Webhook Handling
+- `customer.subscription.created` - Activate new subscription
+- `customer.subscription.updated` - Handle plan changes
+- `customer.subscription.deleted` - Process cancellations
+- `invoice.payment_succeeded` - Confirm recurring payments
+- `invoice.payment_failed` - Handle failed payments and retries
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Coupon System
+- Percentage-based discounts
+- Fixed amount discounts
+- First-time user promotions
+- Seasonal campaigns
+- Referral bonuses
+- Usage limits and expiration dates
+
+## 📱 PWA Capabilities
+
+### Service Worker Features
+- Cache property images and data
+- Offline fallback pages
+- Background sync for form submissions
+- Push notification handling
+
+### Manifest Configuration
+- Custom app icons and splash screens
+- Theme color customization
+- Display mode: standalone
+- Start URL configuration
+
+## 🗺️ Geolocation Features
+
+- **Address Autocomplete:** Google Places API integration
+- **Geocoding:** Convert addresses to coordinates
+- **Reverse Geocoding:** Get address from coordinates
+- **Distance Calculation:** Calculate property proximity
+- **Map Markers:** Custom markers for different property types
+- **Info Windows:** Property previews on map interaction
+
+## 🚀 Performance Optimizations
+
+- **Database Indexing:** Optimized queries for large property datasets
+- **Eager Loading:** Prevent N+1 query problems
+- **Image Optimization:** Lazy loading and responsive images
+- **CDN Integration:** Static asset delivery via CDN
+- **Caching Strategy:** Redis/Memcached for session and query caching
+- **Queue System:** Background job processing for emails and notifications
+
+## 📊 Analytics & Reporting
+
+- Subscription revenue tracking (MRR, ARR, churn rate)
+- User engagement metrics
+- Property listing performance
+- Conversion funnel analysis
+- Geographic distribution reports
+- Payment success/failure rates
+
+## 🔄 Stripe Webhook Testing
+
+```bash
+# Install Stripe CLI for local testing
+stripe listen --forward-to localhost:8000/webhook/stripe
+
+# Trigger test events
+stripe trigger customer.subscription.created
+stripe trigger invoice.payment_succeeded
+```
+
+## 📦 Installation & Setup
+
+```bash
+# Clone repository
+git clone [repository-url]
+
+# Install dependencies
+composer install
+npm install
+
+# Environment setup
+cp .env.example .env
+php artisan key:generate
+
+# Configure Stripe keys in .env
+STRIPE_KEY=pk_test_xxx
+STRIPE_SECRET=sk_test_xxx
+STRIPE_WEBHOOK_SECRET=whsec_xxx
+
+# Run migrations
+php artisan migrate --seed
+
+# Build PWA assets
+npm run production
+
+# Generate PWA manifest
+php artisan pwa:generate
+```
+
+## 🌐 API Endpoints
+
+- `POST /api/properties` - Create property listing
+- `GET /api/properties/search` - Search with filters
+- `POST /api/subscriptions/create` - Initialize subscription
+- `POST /api/webhook/stripe` - Handle Stripe webhooks
+- `GET /api/notifications` - Fetch user notifications
+- `POST /api/messages` - Send chat messages
+
+---
+
+**Status:** Production-ready | **License:** Proprietary | **PWA Score:** 95+ | **Maintained:** Yes
