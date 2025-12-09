@@ -200,4 +200,4 @@ php artisan pwa:generate
 
 ---
 
-**Status:** Production-ready | **License:** Proprietary | **PWA Score:** 95+ | **Maintained:** Yes
+
